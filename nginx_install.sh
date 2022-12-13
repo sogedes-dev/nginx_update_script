@@ -13,7 +13,15 @@ apt autoremove
 
 # INSTALL BUILD DEPENDENCIES
 
-apt install -y build-essential liblua5.1-0-dev libgeoip-dev libgd-dev libxslt-dev libpam0g-dev automake libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libxml2 libxml2-dev uuid-dev git
+apt install -y build-essential git
+
+# INSTALL OPTIONAL DEPENDENCIES
+
+## http_image_filter_module     ->      libgd-dev (libgd3 depended)
+## http_geoip_module            ->      libgeoip-dev (geoip-bin and libgeoip1 depended)
+## http_xslt_module             ->      libxslt1-dev (libxml2-dev, libxml2 and libxslt1.1 depended)
+
+apt install -y libgd-dev libgeoip-dev libxslt1-dev 
 
 # INSTALL NGINX DEPENDENCIES
 
@@ -64,8 +72,10 @@ mv nginx*/ nginx/
 --with-http_realip_module \
 --with-http_v2_module \
 --with-stream \
+--with-stream_realip_module \
 --with-stream_ssl_module \
 --with-stream_ssl_preread_module \
+--with-stream_geoip_module=dynamic \
 --with-mail=dynamic \
 --with-mail_ssl_module \
 --with-http_geoip_module=dynamic \
@@ -99,7 +109,7 @@ mkdir -p /etc/nginx/{temp,pid}
 
 # CLEANUP
 
-rm -f /etc/nginx/fastcgi* /etc/nginx/koi-* /etc/nginx/win-utf /etc/nginx/scgi_params* /etc/nginx/uwsgi_params* /etc/nginx/*.default
+rm -f /etc/nginx/fastcgi* /etc/nginx/koi-* /etc/nginx/win-utf /etc/nginx/scgi_params* /etc/nginx/uwsgi_params* /etc/nginx/*.default /tmp/nginx-build
 
 # CREATE /USR/SBIN SYMLINK (PATH)
 
