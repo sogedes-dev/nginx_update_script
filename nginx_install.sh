@@ -93,9 +93,9 @@ mv nginx*/ nginx/
 (cd ./nginx && make)
 (cd ./nginx && make install)
 
-# CREATE NGINX TEMP DIR
+# CREATE NGINX TEMP AND PID DIR
 
-mkdir -p /etc/nginx/temp
+mkdir -p /etc/nginx/{temp,pid}
 
 # CLEANUP
 
