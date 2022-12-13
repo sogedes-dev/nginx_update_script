@@ -13,7 +13,7 @@ apt autoremove
 
 # INSTALL BUILD DEPENDENCIES
 
-apt-get install -y build-essential liblua5.1-0-dev libgeoip-dev libgd-dev libxslt-dev libpam0g-dev automake libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libxml2 libxml2-dev uuid-dev git
+apt install -y build-essential liblua5.1-0-dev libgeoip-dev libgd-dev libxslt-dev libpam0g-dev automake libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libxml2 libxml2-dev uuid-dev git
 
 # INSTALL NGINX DEPENDENCIES
 
