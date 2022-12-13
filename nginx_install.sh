@@ -36,7 +36,7 @@ tar -zxf zlib.tar.gz
 mv zlib*/ zlib/
 
 # OPENSSL 1.1.1s (THIS WILL TAKE A WHILE)
-# NOTE: WE COULD BOULD THIS WITH OPENSSL-3.x.x W/O PROBLEM, BUT THE BUILD TAKES 45-60 MINUTES
+# NOTE: WE COULD BUILD THIS WITH OPENSSL-3.x.x W/O PROBLEM, BUT THE BUILD TAKES 45-60 MINUTES
 wget --no-check-certificate http://www.openssl.org/source/openssl-1.1.1s.tar.gz -O openssl.tar.gz
 tar -zxf openssl.tar.gz
 mv openssl*/ openssl/
